@@ -31,7 +31,7 @@ exports.handler = async function(context, event, callback) {
     ) {
 
         const workerAttributes = event.WorkerAttributes && JSON.parse(event.WorkerAttributes)
-        const queues = attributes ? [attributes.queue] : workerAttributes.queues;
+        const queues = attributes ? [attributes.queue] : workerAttributes.queue;
 
         if(queues) {
             await assets.changeDialerCapacity(client, context, queues);
